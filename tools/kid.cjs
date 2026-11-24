@@ -4,6 +4,7 @@
 // Local origin = between the feet (0,0); ~92 px tall. pose: 'run' or 'hang' (right hand up at (16,-96)).
 
 const INK = '#141018', NAVY = '#22305E', NAVY2 = '#16204a', GREEN = '#2EE59D', GREEN2 = '#13A86F';
+const GLOVE = '#F6F3FF';
 const SKIN = '#9A6340', SKIN2 = '#7d4c2f', HAIR = '#1a1110';
 
 const kidDefs = (id) => `
@@ -23,16 +24,16 @@ function kidBody(id, pose = 'run') {
   // web-swing poses: a raised arm reaches over the side of the hood to a hand just above the head
   const up = { hangR: ['R'], hangL: ['L'], hangBoth: ['L', 'R'] }[pose] || [];
   const raise = (side) => side === 'R'
-    ? limb('M11 -31 Q42 -62 8 -97', 7.5, `url(#${id}-suit)`) + ball(8, -99, 5.4, GREEN)
-    : limb('M-11 -31 Q-42 -62 -8 -97', 7.5, `url(#${id}-suit)`) + ball(-8, -99, 5.4, GREEN);
+    ? limb('M11 -31 Q42 -62 8 -97', 7.5, `url(#${id}-suit)`) + ball(8, -99, 5.4, GLOVE)
+    : limb('M-11 -31 Q-42 -62 -8 -97', 7.5, `url(#${id}-suit)`) + ball(-8, -99, 5.4, GLOVE);
   const down = (side) => side === 'R'
-    ? `<g>${limb('M11 -31 Q19 -24 18 -16', 7.5, `url(#${id}-suit)`)}${ball(18, -15, 5, GREEN)}</g>`
-    : `<g>${limb('M-11 -31 Q-19 -24 -18 -16', 7.5, `url(#${id}-suit)`)}${ball(-18, -15, 5, GREEN)}</g>`;
+    ? `<g>${limb('M11 -31 Q19 -24 18 -16', 7.5, `url(#${id}-suit)`)}${ball(18, -15, 5, GLOVE)}</g>`
+    : `<g>${limb('M-11 -31 Q-19 -24 -18 -16', 7.5, `url(#${id}-suit)`)}${ball(-18, -15, 5, GLOVE)}</g>`;
   const armsTop = up.map(raise).join('');
-  const armL = up.length ? (up.includes('L') ? '' : down('L')) : `<g class="${id}-armB">${limb('M-11 -31 Q-19 -26 -20 -18', 7.5, `url(#${id}-suit)`)}${ball(-20, -17, 5, GREEN)}</g>`;
+  const armL = up.length ? (up.includes('L') ? '' : down('L')) : `<g class="${id}-armB">${limb('M-11 -31 Q-19 -26 -20 -18', 7.5, `url(#${id}-suit)`)}${ball(-20, -17, 5, GLOVE)}</g>`;
   const armR = up.length ? (up.includes('R') ? '' : down('R')) : hang
-    ? `<g>${limb('M11 -31 Q26 -52 18 -92', 7.5, `url(#${id}-suit)`)}${ball(17, -95, 5.4, GREEN)}</g>`
-    : `<g class="${id}-armF">${limb('M11 -31 Q19 -26 20 -18', 7.5, `url(#${id}-suit)`)}${ball(20, -17, 5, GREEN)}</g>`;
+    ? `<g>${limb('M11 -31 Q26 -52 18 -92', 7.5, `url(#${id}-suit)`)}${ball(17, -95, 5.4, GLOVE)}</g>`
+    : `<g class="${id}-armF">${limb('M11 -31 Q19 -26 20 -18', 7.5, `url(#${id}-suit)`)}${ball(20, -17, 5, GLOVE)}</g>`;
   // tiny geometric spider emblem
   const emblem = `<g fill="${GREEN}"><path d="M0 -30.5 l2.6 2.8 -2.6 3.4 -2.6 -3.4z"/></g>` +
     `<path d="M2 -28.5 l4 -2.2 1.6 -2.4 M2 -27 l4.6 1.2 1.8 2.6 M-2 -28.5 l-4 -2.2 -1.6 -2.4 M-2 -27 l-4.6 1.2 -1.8 2.6" stroke="${GREEN}" stroke-width="1.3" stroke-linecap="round" fill="none"/>`;
@@ -54,10 +55,11 @@ ${armR}
 </g>
 <path d="M-6 -72 q2 -2 4 -1 M4 -73 q2 -2 4 0" stroke="#4a3a3a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
 <g class="${id}-gog">
-<rect x="-21" y="-86" width="42" height="5" rx="2.5" fill="${INK}"/>
-<ellipse cx="-9" cy="-83" rx="8.5" ry="6.4" fill="url(#${id}-lens)" stroke="${INK}" stroke-width="2.6"/>
-<ellipse cx="9" cy="-83" rx="8.5" ry="6.4" fill="url(#${id}-lens)" stroke="${INK}" stroke-width="2.6"/>
-<ellipse cx="-11.5" cy="-85" rx="2.6" ry="1.6" fill="#fff" opacity=".85"/><ellipse cx="6.5" cy="-85" rx="2.6" ry="1.6" fill="#fff" opacity=".85"/>
+<rect x="-24" y="-85" width="48" height="5" rx="2.5" fill="${INK}"/>
+<rect x="-18" y="-90.5" width="15" height="10" rx="3.5" fill="url(#${id}-lens)" stroke="${INK}" stroke-width="2.4"/>
+<rect x="3" y="-90.5" width="15" height="10" rx="3.5" fill="url(#${id}-lens)" stroke="${INK}" stroke-width="2.4"/>
+<rect x="-3" y="-87" width="6" height="3" rx="1" fill="${INK}"/>
+<path d="M-15 -88 l4 0 M6 -88 l4 0" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
 </g>
 <g class="${id}-eyes" fill="${INK}">
 <ellipse cx="-7.5" cy="-53" rx="3.3" ry="4.4"/><ellipse cx="7.5" cy="-53" rx="3.3" ry="4.4"/>
