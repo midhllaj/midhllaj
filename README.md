@@ -1,7 +1,7 @@
 <!-- Profile README for github.com/midhllaj — lives in the repo midhllaj/midhllaj -->
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d0d0d,100:2b2b2b&height=190&section=header&text=Midhlaj&fontSize=72&fontColor=f2f2ee&fontAlign=50&fontAlignY=40&desc=Website%20Developer%20%26%20Designer&descSize=18&descAlignY=64&descAlign=50" alt="Midhlaj — Website Developer & Designer" />
+  <img src="./banner.svg" width="100%" alt="Midhlaj — Website Developer & Designer" />
 </p>
 
 <p align="center">
