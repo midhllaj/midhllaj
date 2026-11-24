@@ -20,8 +20,17 @@ function kidBody(id, pose = 'run') {
   const legs =
     `<g class="${id}-legB">${limb('M-6 -17 L-7 -6', 9, `url(#${id}-suit)`)}${`<path d="M-14 -7 h13 a4 4 0 0 1 4 4 v1 a2 2 0 0 1 -2 2 h-15 a3 3 0 0 1 -3 -3 v0 a4 4 0 0 1 4 -4z" fill="${GREEN}" stroke="${INK}" stroke-width="2.5"/>`}</g>` +
     `<g class="${id}-legF">${limb('M6 -17 L7 -6', 9, `url(#${id}-suit)`)}${`<path d="M1 -7 h13 a4 4 0 0 1 4 4 v0 a3 3 0 0 1 -3 3 h-15 a2 2 0 0 1 -2 -2 v-1 a4 4 0 0 1 4 -4z" fill="${GREEN}" stroke="${INK}" stroke-width="2.5"/>`}</g>`;
-  const armL = `<g class="${id}-armB">${limb('M-11 -31 Q-19 -26 -20 -18', 7.5, `url(#${id}-suit)`)}${ball(-20, -17, 5, GREEN)}</g>`;
-  const armR = hang
+  // web-swing poses: a raised arm reaches over the side of the hood to a hand just above the head
+  const up = { hangR: ['R'], hangL: ['L'], hangBoth: ['L', 'R'] }[pose] || [];
+  const raise = (side) => side === 'R'
+    ? limb('M11 -31 Q42 -62 8 -97', 7.5, `url(#${id}-suit)`) + ball(8, -99, 5.4, GREEN)
+    : limb('M-11 -31 Q-42 -62 -8 -97', 7.5, `url(#${id}-suit)`) + ball(-8, -99, 5.4, GREEN);
+  const down = (side) => side === 'R'
+    ? `<g>${limb('M11 -31 Q19 -24 18 -16', 7.5, `url(#${id}-suit)`)}${ball(18, -15, 5, GREEN)}</g>`
+    : `<g>${limb('M-11 -31 Q-19 -24 -18 -16', 7.5, `url(#${id}-suit)`)}${ball(-18, -15, 5, GREEN)}</g>`;
+  const armsTop = up.map(raise).join('');
+  const armL = up.length ? (up.includes('L') ? '' : down('L')) : `<g class="${id}-armB">${limb('M-11 -31 Q-19 -26 -20 -18', 7.5, `url(#${id}-suit)`)}${ball(-20, -17, 5, GREEN)}</g>`;
+  const armR = up.length ? (up.includes('R') ? '' : down('R')) : hang
     ? `<g>${limb('M11 -31 Q26 -52 18 -92', 7.5, `url(#${id}-suit)`)}${ball(17, -95, 5.4, GREEN)}</g>`
     : `<g class="${id}-armF">${limb('M11 -31 Q19 -26 20 -18', 7.5, `url(#${id}-suit)`)}${ball(20, -17, 5, GREEN)}</g>`;
   // tiny geometric spider emblem
@@ -57,7 +66,8 @@ ${armR}
 <path d="M-11 -60 q3.5 -2 7 -.6 M4 -60.6 q3.5 -1.4 7 .6" stroke="${HAIR}" stroke-width="1.8" stroke-linecap="round" fill="none"/>
 <circle cx="-13" cy="-46.5" r="3" fill="#FF7FA8" opacity=".55"/><circle cx="13" cy="-46.5" r="3" fill="#FF7FA8" opacity=".55"/>
 <path d="M-4.5 -45 q4.5 4.5 9 0" stroke="${INK}" stroke-width="1.9" stroke-linecap="round" fill="#5a1d1d"/>
-</g>`;
+</g>
+${armsTop}`;
 }
 
 const kidCss = (id) => `
