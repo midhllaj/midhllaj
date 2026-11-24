@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://www.midhlaj.co/">
-    <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=20&duration=3200&pause=900&color=E6E6E3&center=true&vCenter=true&width=620&lines=I+design+and+build+websites+that+feel+alive.;Web+platforms%2C+online+stores+%26+iOS+apps.;Motion%2C+3D+and+fast+load+times+%E2%80%94+together.;Got+an+idea%3F+Let's+launch+it." alt="Typing intro" />
+    <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=14&duration=3200&pause=900&color=4AF626&center=true&vCenter=true&width=760&height=44&lines=I+design+and+build+websites+that+feel+alive.;Web+platforms%2C+online+stores+%26+iOS+apps.;Motion%2C+3D+and+fast+load+times+-+together.;Got+an+idea%3F+Let's+launch+it!" alt="Typing intro" />
   </a>
 </p>
 
