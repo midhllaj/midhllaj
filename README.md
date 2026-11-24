@@ -1,7 +1,7 @@
 <!-- Profile README for github.com/midhllaj — lives in the repo midhllaj/midhllaj -->
 
 <p align="center">
-  <img src="./banner.svg" width="100%" alt="Midhlaj — Website Developer & Designer" />
+  <img src="./banner.svg" width="100%" alt="Midhlaj — Good ideas deserve great execution." />
 </p>
 
 <p align="center">
