@@ -108,22 +108,26 @@ const P = { pink: '#FF4D8D', yellow: '#FFD23F', blue: '#3A86FF', green: '#2EE59D
 module.exports = { pix, shadowText, textW, P, svg };
 if (require.main !== module) return;
 
-/* ── section headers ── */
-function header(file, label, color, icon) {
-  const sc = 4, W = 900, H = 44;
+/* ── section headers: pixel title + Jumpy the spider hopping along the dotted line ── */
+const { jumper } = require('./spider.cjs');
+function header(file, label, color, icon, delay) {
+  const sc = 4, W = 900, H = 110, TY = 62;
   const tx = 40, tw = textW(label, sc);
+  const ground = TY + 20;
   let dots = '';
-  for (let x = tx + tw + 34; x < W - 8; x += 12) dots += `<rect x="${x}" y="${H / 2 - 2}" width="4" height="4"/>`;
+  for (let x = tx + tw + 34; x < W - 8; x += 12) dots += `<rect x="${x}" y="${ground}" width="4" height="4"/>`;
+  const j = jumper('jp', { x0: tx + tw + 80, x1: W - 50, ground, delay });
   save(file, svg(W, H,
-    shadowText(icon, 0, 8, sc, color) +
-    shadowText(label, tx, 8, sc, color) +
-    `<rect class="blink" x="${tx + tw + 10}" y="8" width="${sc * 4}" height="${sc * 7}" fill="${color}"/>` +
-    `<g fill="${color}" opacity=".35">${dots}</g>`));
+    `<defs>${j.defs}</defs>` +
+    shadowText(icon, 0, TY, sc, color) +
+    shadowText(label, tx, TY, sc, color) +
+    `<rect class="blink" x="${tx + tw + 10}" y="${TY}" width="${sc * 4}" height="${sc * 7}" fill="${color}"/>` +
+    `<g fill="${color}" opacity=".35">${dots}</g>` + j.body, j.css));
 }
-header('h-about.svg', 'PLAYER 1', P.pink, '@');
-header('h-toolbox.svg', 'INVENTORY', P.yellow, '*');
-header('h-work.svg', 'LEVELS CLEARED', P.cyan, '^');
-header('h-contrib.svg', 'HIGH SCORES', P.green, '#');
+header('h-about.svg', 'PLAYER 1', P.pink, '@', 0);
+header('h-toolbox.svg', 'INVENTORY', P.yellow, '*', -2);
+header('h-work.svg', 'LEVELS CLEARED', P.cyan, '^', -4);
+header('h-contrib.svg', 'HIGH SCORES', P.green, '#', -1);
 
 /* ── player card ── */
 {
