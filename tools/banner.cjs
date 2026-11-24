@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require(require.resolve('sharp', { paths: [__dirname, path.join(__dirname, '../..')] }));
 const { pix, shadowText, textW, P } = require('./pixel.cjs');
-const { spiderDefs, spiderBody, spiderCss } = require('./spider.cjs');
+const { heroDefs, heroBody, heroCss } = require('./hero.cjs');
 
 const src = process.argv[2] || path.join(__dirname, '../../public/assets/portrait.webp');
 const OUT = path.join(__dirname, '..', 'banner.svg');
@@ -105,8 +105,8 @@ const f = (n) => +n.toFixed(1);
   };
   const spider =
     `<g clip-path="url(#inside)"><g class="swing"><g class="drop">` +
-    `<rect x="${AX - 1}" y="${AY - 800}" width="2" height="804" fill="#cfc8ff" opacity=".8"/>` +
-    `<g shape-rendering="geometricPrecision" transform="translate(${AX + 11 * 1.25} ${AY + 4 + 39 * 1.25}) scale(1.25)">${spiderBody('bs')}</g>` +
+    `<rect x="${AX - 1}" y="${AY - 800}" width="2" height="804" fill="#00D1FF" opacity=".9"/>` +
+    `<g shape-rendering="geometricPrecision" transform="translate(${AX + 1 * 1.1} ${AY + 4 + 93 * 1.1}) scale(1.1)">${heroBody('bh', 'hang')}</g>` +
     `</g></g></g>`;
 
   const ringCss = rings.map((_, k) => `.r${k}{--d:${(k * 0.11).toFixed(2)}s}`).join('');
@@ -137,13 +137,13 @@ ${ringCss}
 @keyframes swing{0%,26%{transform:rotate(0)}34%{transform:rotate(9deg)}43%{transform:rotate(-9deg)}52%{transform:rotate(6deg)}60%{transform:rotate(-3deg)}66%,100%{transform:rotate(0)}}
 .fb{animation:legs .36s steps(1) infinite}.fa{animation:legs .36s steps(1) -.18s infinite}
 @keyframes legs{50%{opacity:0}}
-${spiderCss('bs')}
+${heroCss('bh')}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}.t,.cur{opacity:1}.drop{display:none}}`;
 
   const out = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" shape-rendering="crispEdges" role="img" aria-label="Midhlaj. Good ideas deserve great execution.">
 <defs>
 <linearGradient id="ink" gradientUnits="userSpaceOnUse" x1="${PX}" y1="0" x2="${PX + PW}" y2="${H}"><stop offset="0" stop-color="${P.pink}"/><stop offset=".45" stop-color="${P.purple}"/><stop offset="1" stop-color="${P.cyan}"/></linearGradient>
-${spiderDefs('bs')}
+${heroDefs('bh')}
 <clipPath id="inside"><rect x="${FRAME}" y="${FRAME}" width="${W - 2 * FRAME}" height="${H - 2 * FRAME}"/></clipPath>
 </defs>
 <style>${css}</style>

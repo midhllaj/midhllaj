@@ -110,13 +110,15 @@ if (require.main !== module) return;
 
 /* ── section headers: pixel title + Jumpy the spider hopping along the dotted line ── */
 const { jumper } = require('./spider.cjs');
+const { heroDefs, heroBody, heroCss } = require('./hero.cjs');
 function header(file, label, color, icon, delay) {
-  const sc = 4, W = 900, H = 110, TY = 62;
+  const sc = 4, W = 900, H = 130, TY = 82;
   const tx = 40, tw = textW(label, sc);
   const ground = TY + 20;
   let dots = '';
   for (let x = tx + tw + 34; x < W - 8; x += 12) dots += `<rect x="${x}" y="${ground}" width="4" height="4"/>`;
-  const j = jumper('jp', { x0: tx + tw + 80, x1: W - 50, ground, delay });
+  const char = { defs: heroDefs('hr'), body: heroBody('hr', 'run'), css: heroCss('hr') };
+  const j = jumper('jp', { x0: tx + tw + 80, x1: W - 50, ground, delay, char, scale: 0.85, height: 28, hop: 0.7, flip: true, shadowRx: 18, flipOrigin: '2px -42px' });
   save(file, svg(W, H,
     `<defs>${j.defs}</defs>` +
     shadowText(icon, 0, TY, sc, color) +

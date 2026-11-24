@@ -41,7 +41,7 @@ const spiderCss = (id) => `
  * Squash on landing, stretch on take-off, shadow shrinks while it's in the air,
  * turns around at each end. Returns { defs, body, css } to drop into an SVG.
  */
-function jumper(id, { x0, x1, ground, scale = 1, hop = 0.75, height = 34, delay = 0, pauseAt = [] }) {
+function jumper(id, { x0, x1, ground, scale = 1, hop = 0.75, height = 34, delay = 0, char = null, flip = false, shadowRx = 34, flipOrigin = '0px -30px' }) {
   const dist = Math.abs(x1 - x0);
   const hops = Math.max(2, Math.round(dist / (46 * scale)));  // ~46px per hop
   const leg = hops * hop;                                      // seconds for one crossing
@@ -63,16 +63,18 @@ function jumper(id, { x0, x1, ground, scale = 1, hop = 0.75, height = 34, delay 
 @keyframes ${id}-hop{${hopFrames(T, leg, hops, hop, height, 'hop')}}
 @keyframes ${id}-sq{${hopFrames(T, leg, hops, hop, height, 'sq')}}
 @keyframes ${id}-sh{${hopFrames(T, leg, hops, hop, height, 'sh')}}
-${spiderCss(id)}`;
-  const body = `<g class="${id}-walk" shape-rendering="geometricPrecision" transform="translate(${x0} ${ground}) scale(${scale})"><ellipse class="${id}-sh" cx="-2" cy="1" rx="34" ry="5" fill="#000" opacity=".35"/>` +
-    `<g class="${id}-hop"><g class="${id}-sq">${spiderBody(id)}</g></g></g>`;
-  return { defs: spiderDefs(id), body, css };
+${flip ? `.${id}-flip{transform-box:view-box;transform-origin:${flipOrigin};animation:${id}-flip ${T.toFixed(2)}s linear ${delay}s infinite both}
+@keyframes ${id}-flip{${hopFrames(T, leg, hops, hop, height, 'flip')}}` : ''}
+${char ? char.css : spiderCss(id)}`;
+  const body = `<g class="${id}-walk" shape-rendering="geometricPrecision" transform="translate(${x0} ${ground}) scale(${scale})"><ellipse class="${id}-sh" cx="-2" cy="1" rx="${shadowRx}" ry="5" fill="#000" opacity=".35"/>` +
+    `<g class="${id}-hop"><g class="${id}-sq"><g class="${id}-flip">${char ? char.body : spiderBody(id)}</g></g></g></g>`;
+  return { defs: char ? char.defs : spiderDefs(id), body, css };
 }
 
 // keyframes for every hop in both crossings (rests are flat)
 function hopFrames(T, leg, hops, hop, height, kind) {
   const pc = (s) => ((s / T) * 100).toFixed(3) + '%';
-  const rest = { hop: 'transform:translateY(0)', sq: 'transform:scale(1,1)', sh: 'transform:scale(1,1);opacity:.35' };
+  const rest = { hop: 'transform:translateY(0)', sq: 'transform:scale(1,1)', sh: 'transform:scale(1,1);opacity:.35', flip: 'transform:rotate(0)' };
   let out = `0%{${rest[kind]}}`;
   for (const start of [0, leg + 0.8]) {
     for (let h = 0; h < hops; h++) {
@@ -83,6 +85,8 @@ function hopFrames(T, leg, hops, hop, height, kind) {
         out += `${pc(t + hop)}{transform:translateY(0)}`;
       } else if (kind === 'sq') {
         out += `${pc(t)}{transform:scale(1.18,.8)}${pc(t + hop * 0.12)}{transform:scale(.9,1.12)}${pc(t + hop * 0.5)}{transform:scale(1,1)}${pc(t + hop * 0.92)}{transform:scale(.95,1.06)}${pc(t + hop)}{transform:scale(1.18,.8)}`;
+      } else if (kind === 'flip') {
+        if (h === hops - 1) out += `${pc(t + hop * 0.08)}{transform:rotate(0);animation-timing-function:ease-in-out}${pc(t + hop * 0.9)}{transform:rotate(360deg)}${pc(t + hop * 0.901)}{transform:rotate(0)}`;
       } else {
         out += `${pc(t)}{transform:scale(1,1);opacity:.35}${pc(t + hop * 0.5)}{transform:scale(.55,.55);opacity:.15}${pc(t + hop)}{transform:scale(1,1);opacity:.35}`;
       }
