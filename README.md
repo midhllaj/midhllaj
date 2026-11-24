@@ -1,4 +1,4 @@
-<!-- Profile README for github.com/midhllaj — lives in the repo midhllaj/midhllaj -->
+<!-- Profile README for github.com/midhllaj. Pixel art in assets/ is drawn by tools/pixel.cjs -->
 
 <p align="center">
   <img src="./banner.svg" width="100%" alt="Midhlaj — Good ideas deserve great execution." />
@@ -6,65 +6,72 @@
 
 <p align="center">
   <a href="https://www.midhlaj.co/">
-    <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=14&duration=3200&pause=900&color=4AF626&center=true&vCenter=true&width=760&height=44&lines=I+design+and+build+websites+that+feel+alive.;Web+platforms%2C+online+stores+%26+iOS+apps.;Motion%2C+3D+and+fast+load+times+-+together.;Got+an+idea%3F+Let's+launch+it!" alt="Typing intro" />
+    <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=14&duration=3200&pause=900&color=4AF626&center=true&vCenter=true&width=760&height=44&lines=I+design+and+build+websites+that+feel+alive.;Web+platforms%2C+online+stores+%26+iOS+apps.;Motion%2C+3D+and+fast+load+times+-+together.;Got+an+idea%3F+Let's+launch+it!" alt="I design and build websites that feel alive." />
   </a>
 </p>
 
 <p align="center">
-  <a href="https://www.midhlaj.co/"><img src="https://img.shields.io/badge/midhlaj.co-111111?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" /></a>
-  <a href="https://www.linkedin.com/in/mohammed-midhlaj-a10215365/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="https://www.instagram.com/midhlaj.co_/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
-  <a href="mailto:midhlaj268@gmail.com"><img src="https://img.shields.io/badge/Email-1f1f1f?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-  <a href="https://www.midhlaj.co/?open=contact"><img src="https://img.shields.io/badge/Taking_new_projects-2ea043?style=for-the-badge" alt="Taking on new projects" /></a>
+  <a href="https://www.midhlaj.co/"><img src="https://img.shields.io/badge/midhlaj.co-FFD23F?style=for-the-badge&logo=googlechrome&logoColor=black&labelColor=FFD23F" alt="Website" /></a>
+  <a href="https://www.linkedin.com/in/mohammed-midhlaj-a10215365/"><img src="https://img.shields.io/badge/LinkedIn-3A86FF?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://www.instagram.com/midhlaj.co_/"><img src="https://img.shields.io/badge/Instagram-FF4D8D?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
+  <a href="mailto:midhlaj268@gmail.com"><img src="https://img.shields.io/badge/Email-9B5DE5?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  <a href="https://www.midhlaj.co/?open=contact"><img src="https://img.shields.io/badge/Open_for_projects-2EE59D?style=for-the-badge&logo=rocket&logoColor=black" alt="Open for projects" /></a>
 </p>
 
----
+<br />
 
-### 👋 Hey, I'm Midhlaj
+<img src="./assets/h-about.svg" width="100%" alt="Player 1" />
 
-I'm a website developer and designer from India. I build fast websites, online stores, web apps and iOS apps for businesses all over the world, with a soft spot for motion, WebGL and small details that make a site feel crafted.
+<a href="https://www.midhlaj.co/"><img src="./assets/player.svg" width="100%" alt="Midhlaj: designer and developer from India, open for new projects" /></a>
 
-- 🌐 &nbsp;**Portfolio:** [midhlaj.co](https://www.midhlaj.co/). The face on the homepage is made of hundreds of my own website screenshots, in three.js
-- 🛠️ &nbsp;**I build:** websites · e-commerce · web apps & dashboards · iOS apps · UI/UX · motion design
-- 📱 &nbsp;**Latest launch:** [Nudge](https://apps.apple.com/app/nudge-focus-timer-blocker/id6754453124), a focus timer & app blocker for iPhone
-- 💬 &nbsp;**Have a project?** [Start one here](https://www.midhlaj.co/?open=contact)
+I make websites, online stores, web apps and iPhone apps for businesses anywhere in the world. Most of my time goes into the bits people feel before they notice them: how a page moves, how fast it loads, how a button answers a tap.
 
-### 🧰 Toolbox
+The face on [midhlaj.co](https://www.midhlaj.co/) is built from hundreds of screenshots of sites I've made, flying around in three.js. My latest launch is [Nudge](https://apps.apple.com/app/nudge-focus-timer-blocker/id6754453124), a focus timer and app blocker for iPhone.
+
+<br />
+
+<img src="./assets/h-toolbox.svg" width="100%" alt="Inventory" />
 
 <p>
   <img src="https://skillicons.dev/icons?i=js,ts,html,css,react,nextjs,tailwind,threejs,vite,swift,nodejs,vercel,git&perline=13" alt="JavaScript, TypeScript, HTML, CSS, React, Next.js, Tailwind, three.js, Vite, Swift, Node.js, Vercel, Git" />
 </p>
 <p>
-  <img src="https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=black" alt="GSAP" />
-  <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white" alt="Framer Motion" />
-  <img src="https://img.shields.io/badge/WebGL_%2F_GLSL-990000?style=flat-square&logo=webgl&logoColor=white" alt="WebGL / GLSL" />
-  <img src="https://img.shields.io/badge/SwiftUI-F05138?style=flat-square&logo=swift&logoColor=white" alt="SwiftUI" />
+  <img src="https://img.shields.io/badge/GSAP-B8F84A?style=for-the-badge&logo=greensock&logoColor=black" alt="GSAP" />
+  <img src="https://img.shields.io/badge/Framer_Motion-9B5DE5?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+  <img src="https://img.shields.io/badge/WebGL_%2F_GLSL-FF3B3B?style=for-the-badge&logo=webgl&logoColor=white" alt="WebGL / GLSL" />
+  <img src="https://img.shields.io/badge/SwiftUI-FF7A1A?style=for-the-badge&logo=swift&logoColor=white" alt="SwiftUI" />
 </p>
 
-### ✨ Selected work
+<br />
 
-| Project | What it is | Year |
-| --- | --- | --- |
-| [**Linaul**](https://linaul.com/) | SaaS for logistics | 2026 |
-| [**Nudge**](https://apps.apple.com/app/nudge-focus-timer-blocker/id6754453124) | iOS focus timer & app blocker | 2026 |
-| [**Symbol Business Setup**](https://www.symbolbusinesssetup.com/) | Business setup services, Dubai | 2026 |
-| [**Nexes Wedding Company**](https://nexes-wedding-company-umber.vercel.app/) | Wedding photography | 2026 |
-| [**Great Escapes Tourism**](https://www.getourism.com/) | Travel & tourism | 2025 |
-| [**Afwajh Group**](https://www.afwajhgroup.com/) | Corporate group site | 2025 |
-| [**Dion Power**](https://www.dionpower.in/) | Energy & battery tech | 2025 |
-| [**Symbol Advertising**](https://www.symboladvertisement.com) | Advertising agency | 2025 |
-| [**Lovin Flowers**](https://lovinflowers.vercel.app/) | E-commerce florist | 2025 |
+<img src="./assets/h-work.svg" width="100%" alt="Levels cleared" />
 
-<sub>See them all, with the stories behind them, at <a href="https://www.midhlaj.co/">midhlaj.co</a>.</sub>
+<p>
+  <a href="https://linaul.com/"><img src="./assets/card-linaul.svg" width="32%" alt="Linaul, SaaS for logistics, 2026" /></a>
+  <a href="https://apps.apple.com/app/nudge-focus-timer-blocker/id6754453124"><img src="./assets/card-nudge.svg" width="32%" alt="Nudge, iOS focus app, 2026" /></a>
+  <a href="https://www.symbolbusinesssetup.com/"><img src="./assets/card-symbol-setup.svg" width="32%" alt="Symbol Business Setup, Dubai, 2026" /></a>
+  <a href="https://nexes-wedding-company-umber.vercel.app/"><img src="./assets/card-nexes.svg" width="32%" alt="Nexes Wedding Company, 2026" /></a>
+  <a href="https://www.getourism.com/"><img src="./assets/card-get.svg" width="32%" alt="Great Escapes Tourism, 2025" /></a>
+  <a href="https://www.afwajhgroup.com/"><img src="./assets/card-afwajh.svg" width="32%" alt="Afwajh Group, 2025" /></a>
+  <a href="https://www.dionpower.in/"><img src="./assets/card-dion.svg" width="32%" alt="Dion Power, 2025" /></a>
+  <a href="https://www.symboladvertisement.com"><img src="./assets/card-symbol-adv.svg" width="32%" alt="Symbol Advertising, 2025" /></a>
+  <a href="https://lovinflowers.vercel.app/"><img src="./assets/card-lovin.svg" width="32%" alt="Lovin Flowers, 2025" /></a>
+</p>
 
-### 🐍 Contributions
+Every card opens the live site. The stories behind them are on [midhlaj.co](https://www.midhlaj.co/).
+
+<br />
+
+<img src="./assets/h-contrib.svg" width="100%" alt="High scores" />
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/midhllaj/midhllaj/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/midhllaj/midhllaj/output/github-snake.svg" />
-  <img alt="Contribution grid being eaten by a snake" src="https://raw.githubusercontent.com/midhllaj/midhllaj/output/github-snake.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/midhllaj/midhllaj/output/snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/midhllaj/midhllaj/output/snake-light.svg" />
+  <img alt="Contribution grid being eaten by a snake" src="https://raw.githubusercontent.com/midhllaj/midhllaj/output/snake-light.svg" />
 </picture>
 
+<br /><br />
+
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2b2b2b,100:0d0d0d&height=110&section=footer" alt="" />
+  <a href="https://www.midhlaj.co/?open=contact"><img src="./assets/footer.svg" width="80%" alt="Thanks for playing. Insert coin to start a project." /></a>
 </p>
