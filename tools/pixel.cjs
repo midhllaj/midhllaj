@@ -105,6 +105,9 @@ const save = (name, s) => { fs.writeFileSync(path.join(OUT, name), s); console.l
 
 const P = { pink: '#FF4D8D', yellow: '#FFD23F', blue: '#3A86FF', green: '#2EE59D', purple: '#9B5DE5', orange: '#FF7A1A', cyan: '#00D1FF', red: '#FF3B3B', lime: '#B8F84A' };
 
+module.exports = { pix, shadowText, textW, P, svg };
+if (require.main !== module) return;
+
 /* ── section headers ── */
 function header(file, label, color, icon) {
   const sc = 4, W = 900, H = 44;
